@@ -158,13 +158,13 @@ html, body {
 }
 body {
    min-height: 100vh;
-  background: url("file:///Users/parissa/Desktop/Interaction/84663c467481e6be5974897143ca6275.jpg") center center / cover no-repeat fixed;
   color: #ffffff;
   margin: 0;
   overflow-x: hidden;
   font-family: "Cormorant Garamond", serif;
-  
-}
+  background-image: url ("sky.png");
+  }
+
 body::before {
   content:"";
   position: fixed;

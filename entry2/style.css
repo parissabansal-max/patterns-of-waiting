@@ -283,7 +283,7 @@ background: rgba(0, 0, 0, 0.45); /* soft dark overlay to calm the photo */
 }
 
 /* ========= MOBILE LAYOUT (phones & small tablets) ========= */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 
   /* Background behaves better on phones without 'fixed' */
   body {

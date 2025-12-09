@@ -282,3 +282,45 @@ background: rgba(0, 0, 0, 0.45); /* soft dark overlay to calm the photo */
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ========= MOBILE LAYOUT (phones & small tablets) ========= */
+@media (max-width: 768px) {
+
+  /* Background behaves better on phones without 'fixed' */
+  body {
+    background: url("./sky.png") center center / cover no-repeat;
+    background-attachment: scroll;
+  }
+
+  /* Big title "Changes," – smaller + centered nicely */
+  .poem {
+    font-size: 36px;          /* was 72px */
+    margin-top: 120px;        /* less push down */
+    margin-left: 0;           /* no horizontal offset */
+    padding: 0 1.5rem;        /* side padding so it doesn’t touch edges */
+    text-align: center;
+  }
+
+  .poem p {
+    font-size: 22px;          /* smaller paragraph text */
+    line-height: 1.4;
+  }
+
+  /* Prompts that are positioned around the screen */
+  .prompt,
+  .prompt2,
+  .prompt3 {
+    font-size: 16px;
+    max-width: 85%;
+    left: 50%;
+    transform: translateX(-50%);  /* center horizontally */
+  }
+
+  /* Scroll hint text smaller + closer */
+  .scroll-hint {
+    font-size: 16px;
+    margin-top: 12vh;
+    margin-bottom: 6vh;
+  }
+}
+
+

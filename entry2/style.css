@@ -162,7 +162,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-family: "Cormorant Garamond", serif;
-  background-image: url ("sky.png");
+  background: url ("sky.png");
   }
 
 body::before {

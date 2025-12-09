@@ -1,0 +1,199 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;300;400&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+
+}
+body {
+  background: radial-gradient(circle at 50% 20%, #2c2c2c, #0d0d0d 70%);
+  background-attachment: fixed;
+}
+
+.entry-8 {
+  min-height: 100vh;
+            /* very dark subway-night */
+  color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.entry8-inner {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 2.5rem 4rem;
+}
+
+/* Heading + subtext */
+
+.entry8-heading {
+  text-align: center;
+  font-family: "Noto Sans Mono", monospace;
+  font-weight: 100;
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: 0.06em;
+  margin: 0 0 1rem;
+}
+
+.entry8-subtext {
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  margin: 0 0 4rem;
+  opacity: 0.6;
+  margin-top: 1.7rem;
+}
+
+/* Subway line */
+
+.subway-line-wrapper {
+  position: relative;
+  margin-top: 15rem;
+  margin-inline: auto;
+  width: min(820px, 100%);
+  padding: 3rem 0;
+}
+
+.subway-track {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  background: linear-gradient(to right, #555, #999, #555);
+  opacity: 0.7;
+}
+
+/* Stations */
+
+.station {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: default;
+}
+
+/* positions along the line (adjust % if you want!) */
+.station-1 { left: 8%; }
+.station-2 { left: 32%; }
+.station-3 { left: 60%; }
+.station-4 { left: 86%; }
+
+.station-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f2a311;                  /* subway-ish orange */
+  box-shadow:
+    0 0 0 3px rgba(0,0,0,0.7),
+    0 0 16px rgba(242,163,17,0.8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.station-label {
+  font-family: "Noto Sans Mono", monospace;
+  font-weight: 100;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* LED-style message tooltip */
+
+.station-message {
+  position: absolute;
+  top: -3.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.45rem 0.8rem;
+  background: #050505;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 165, 0, 0.25);
+  font-family: "Noto Sans Mono", monospace;
+  font-weight: 100;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffb53c;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* little LED “pixels” feel */
+.station-message::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(255,255,255,0.04) 1px,
+    transparent 1px
+  );
+  background-size: 3px 100%;
+  mix-blend-mode: soft-light;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Hover interactions */
+
+.station:hover .station-dot {
+  transform: scale(1.15);
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,0.85),
+    0 0 22px rgba(242,163,17,1);
+}
+
+.station:hover .station-message {
+  opacity: 1;
+  transform: translate(-50%, -4px);
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+  .subway-line-wrapper {
+    padding: 2.5rem 0 3.5rem;
+  }
+
+  .subway-track {
+    left: 8%;
+    right: 8%;
+  }
+
+  .station-dot {
+    width: 16px;
+    height: 16px;
+  }
+
+  .station-label {
+    font-size: 0.65rem;
+  }
+
+  .station-message {
+    font-size: 0.64rem;
+    top: -3rem;
+  }
+
+  .station-1 { left: 10%; }
+  .station-2 { left: 35%; }
+  .station-3 { left: 65%; }
+  .station-4 { left: 90%; }
+}

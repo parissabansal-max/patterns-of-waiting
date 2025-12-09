@@ -273,8 +273,8 @@ background: rgba(0, 0, 0, 0.45); /* soft dark overlay to calm the photo */
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
   opacity: 0;
-  animation: scrollHint 1.6s ease-out forwards, pulse 3s ease-in-out infinite alternate;
-  animation-delay: 25s; 
+  animation: scrollHint 1.2s ease-out forwards, pulse 3s ease-in-out infinite alternate;
+  animation-delay: 20s; 
   cursor: default;
 }
 

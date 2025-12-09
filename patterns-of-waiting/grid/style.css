@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;300;400&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.page-title {
+    position: fixed;
+    top: 60px;
+    left: 90px;
+
+    font-family: "Noto Sans Mono", monospace;
+    font-weight: 100;
+    font-size: clamp(2rem, 2.5vw, 2.8rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #f5f5f5;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+
+body {
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* big invisible circle space */
+.circle-grid {
+  position: relative;
+  width: min(70vmin, 720px);
+  aspect-ratio: 1 / 1;
+}
+
+/* rotating phrase that stays upright while orbiting */
+.clock-hand {
+  position: absolute;
+  top: 50%;  /* move the rotation circle slightly down */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: spinInPlace 40s linear infinite;
+}
+
+.clock-hand span {
+  color: rgba(245, 245, 245, 0.85);
+  font-size: 1.2rem;      /* <- now you can increase size safely */
+  letter-spacing: 0.25em;
+  white-space: nowrap;
+}
+
+/* rotates around its own center, but stays in the same spot */
+@keyframes spinInPlace {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+
+/* small image circles */
+.circle-item {
+  position: absolute;
+  width: 32%;
+  height: 32%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #111;
+  --timer-duration: 4s; /* default, overridden per circle */
+ box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.7),   /* sharp white rim */
+    0 0 16px rgba(255, 255, 255, 0.35),   /* main glow */
+    0 0 40px rgba(255, 255, 255, 0.22); 
+}
+
+/* positions (hexagon / clock layout) */
+.circle-item--1 {
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-item--2 {
+  top: 32%;
+  left: 84.6%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-item--3 {
+  top: 68%;
+  left: 84.6%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-item--4 {
+  top: 88%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-item--5 {
+  top: 68%;
+  left: 15.4%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-item--6 {
+  top: 32%;
+  left: 15.4%;
+  transform: translate(-50%, -50%);
+}
+
+/* timer speeds – this encodes how long each kind of waiting feels */
+.circle-item--1 {
+  --timer-duration: 2.5s; /* coffee = quick wait */
+}
+.circle-item--2 {
+  --timer-duration: 4s; /* concert entry */
+}
+.circle-item--3 {
+  --timer-duration: 6s; /* exam results = long wait */
+}
+.circle-item--4 {
+  --timer-duration: 3.5s; /* subway */
+}
+.circle-item--5 {
+  --timer-duration: 8s; /* seasons = very slow */
+}
+.circle-item--6 {
+  --timer-duration: 5s; /* queue */
+}
+
+.circle-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  opacity: 0.95;
+  transition: transform 0.6s ease, filter 0.6s ease, opacity 0.6s ease;
+}
+
+/* SVG wait timer ring */
+.timer-ring {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform: rotate(-90deg); /* start at top like a clock */
+}
+
+.timer-ring circle {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 2.2;
+  stroke-dasharray: 295;
+  stroke-dashoffset: 295;
+}
+
+/* Grayscale → color + zoom + timer drawing on hover */
+.circle-item:hover img {
+  transform: scale(1.06);
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.circle-item:hover .timer-ring circle {
+  animation: fillTimer var(--timer-duration) linear forwards;
+}
+
+/* reset the ring when not hovering so it can replay */
+.circle-item:not(:hover) .timer-ring circle {
+  animation: none;
+  stroke-dashoffset: 295;
+}
+/* keep coffee + concert always grayscale and not zoomy */
+.circle-item--1 img,
+.circle-item--2 img {
+  filter: grayscale(100%);
+  opacity: 0.95;
+}
+
+.circle-item--1:hover img,
+.circle-item--2:hover img {
+  transform: none;
+  filter: grayscale(100%);
+  opacity: 0.95;
+}
+
+
+@keyframes fillTimer {
+  from {
+    stroke-dashoffset: 295;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* responsive tweak */
+@media (max-width: 600px) {
+  .circle-grid {
+    width: 90vmin;
+  }
+}

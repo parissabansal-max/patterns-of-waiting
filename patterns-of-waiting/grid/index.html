@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+         
+    </head>
+   <body>
+      <div class="fog"></div>
+      <div class="page-title">
+  YOU WAIT,<br>TIME FLIES
+</div>
+  <div class="circle-grid">
+    <!-- faint clock hand sweeping through the ring -->
+    <div class="clock-hand">
+  <span>Experience Waiting</span>
+</div>
+
+    <!-- 1 – coffee -->
+    <div class="circle-item circle-item--1">
+      <img
+        src="https://images.unsplash.com/photo-1675306408031-a9aad9f23308?auto=format&fit=crop&w=1200&q=80"
+        alt="Coffee beans"
+      />
+      <!-- timer ring -->
+      <svg class="timer-ring" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="47"></circle>
+      </svg>
+      <!-- ambient sound (put your own file here) -->
+      <audio src="sounds/coffee.mp3" preload="auto"></audio>
+    </div>
+
+    <!-- 2 – concert / music -->
+    <div class="circle-item circle-item--2">
+      <img
+        src="https://images.unsplash.com/photo-1656283384093-1e227e621fad?auto=format&fit=crop&w=1200&q=80"
+        alt="Concert crowd"
+      />
+      <svg class="timer-ring" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="47"></circle>
+      </svg>
+      <audio src="sounds/concert.mp3" preload="auto"></audio>
+    </div>
+
+    <!-- 3 – exam results -->
+    <div class="circle-item circle-item--3">
+      <img src="images/result.png" alt="Exam papers" />
+      <svg class="timer-ring" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="47"></circle>
+      </svg>
+      <audio src="sounds/results.mp3" preload="auto"></audio>
+    </div>
+
+    <!-- 4 – subway -->
+    <div class="circle-item circle-item--4">
+      <img src="images/subway.png" alt="Subway platform" />
+      <svg class="timer-ring" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="47"></circle>
+      </svg>
+      <audio src="sounds/subway.mp3" preload="auto"></audio>
+    </div>
+
+    <!-- 5 – seasons / forest -->
+    <div class="circle-item circle-item--5">
+      <img src="images/seasons.png" alt="Foggy forest" />
+      <svg class="timer-ring" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="47"></circle>
+      </svg>
+      <audio src="sounds/seasons.mp3" preload="auto"></audio>
+    </div>
+
+    <!-- 6 – queue / food line -->
+    <div class="circle-item circle-item--6">
+      <img src="images/Food.png" alt="People in a queue" />
+      <svg class="timer-ring" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="47"></circle>
+      </svg>
+      <audio src="sounds/queue.mp3" preload="auto"></audio>
+    </div>
+  </div>
+
+  <!-- JS: play / stop ambient sound on hover -->
+  <script>
+    const items = document.querySelectorAll(".circle-item");
+
+    items.forEach((item) => {
+      const audio = item.querySelector("audio");
+      if (!audio) return;
+
+      item.addEventListener("mouseenter", () => {
+        audio.currentTime = 0;
+        audio.volume = 0.4; // softer ambience
+        audio.play().catch(() => {});
+      });
+
+      item.addEventListener("mouseleave", () => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+    });
+  </script> 
+</body>
+</html>

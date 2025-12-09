@@ -1,0 +1,235 @@
+/* FONT FOR HEADING */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;300;400&display=swap');
+
+/* PAGE BACKGROUND (KEEP YOUR IMAGE) */
+body {
+  background: url("again.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+/* ================================
+   ENTRY 6 — Waiting for Seasons to Change
+   ================================ */
+
+.entry-6 {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #f5f5f5;
+}
+
+.entry6-inner {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2.5rem 4rem;
+}
+
+/* ---------- HEADING (UNCHANGED) ---------- */
+
+.entry6-heading {
+  text-align: left;
+  margin-bottom: 3rem;
+  line-height: 1.9;
+  width: max-content;
+  margin-left: auto;
+ 
+  margin-right: auto;
+}
+
+.entry6-heading .hline {
+  margin: 0.15rem 0;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: clamp(2.0rem, 2.5vw, 2.8rem);
+  font-weight: 100;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transform: translateY(12px);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* vertical “step” alignment */
+.entry6-heading .hline-2 { padding-left: 18rem; }
+.entry6-heading .hline-3 { padding-left: 23rem; }
+.entry6-heading .hline-4 { padding-left: 28rem; }
+
+/* stagger timings so they come one by one */
+
+.hline-1 {
+  animation-name: headingFirstLine;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+
+.hline-2 {
+  animation: headingFadeUp 0.9s ease-out forwards;
+  animation-delay: 2s;
+}
+
+.hline-3 {
+  animation: headingFadeUp 0.9s ease-out forwards;
+  animation-delay: 4s;
+}
+
+.hline-4 {
+  animation: headingFadeUp 0.9s ease-out forwards;
+  animation-delay: 6s;
+}
+
+@keyframes headingFirstLine {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes headingFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- BODY (HOVER PAIRS) ---------- */
+
+/* fade in the whole block after heading is done */
+.entry6-body {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: bodyFadeUp 0.9s ease-out forwards;
+  animation-delay: 8s;  /* after all heading lines appear */
+
+  margin-top: 3rem;
+  width: 85%;              /* was 50% — wider = more distance */
+  margin-left: auto;       /* center the block */
+  margin-right: auto;      /* center the block */
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.1rem;
+}
+
+
+@keyframes bodyFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* each pair = one thought + its echo */
+.line-pair {
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+}
+
+/* shared body text styles */
+.line-left,
+.line-right {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.7rem;
+  line-height: 2.3;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.75);
+}
+
+/* left line = always visible, slightly softer */
+.line-left {
+  color: rgba(245, 245, 245, 0.7);
+  transition: color 0.25s ease;
+}
+
+/* right line = hidden until hover, sits under left line */
+.line-right {
+  color: rgba(245, 245, 245, 0.95);
+  opacity: 0;
+  transform: translateY(6px);     
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* LEFT BLOCK: pair sits on left side */
+.line-pair.left-block {
+  align-items: flex-start;   
+    align-self: flex-start;            /* stick to left */
+}
+
+.line-pair.left-block .line-left,
+.line-pair.left-block .line-right {
+  text-align: left;
+}
+
+.line-pair.left-block .line-right {
+  padding-left: 1rem;                   /* slight indent under left line */
+}
+
+/* RIGHT BLOCK: pair sits on right side */
+.line-pair.right-block {
+  align-items: flex-end;
+  align-self: flex-end;                 /* push to right */
+}
+
+.line-pair.right-block .line-left,
+.line-pair.right-block .line-right {
+  text-align: right;
+}
+
+.line-pair.right-block .line-right {
+  padding-right: 1rem;                  /* slight indent under left line */
+}
+
+
+/* hover interaction */
+.line-pair:hover .line-left {
+  color: rgba(245, 245, 245, 1);
+}
+
+.line-pair:hover .line-right {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 800px) {
+  .entry6-inner {
+    padding: 4rem 1.6rem 3rem;
+  }
+
+  .entry6-heading .hline {
+    font-size: clamp(1.8rem, 5vw, 2.3rem);
+    padding-left: 0;     /* simpler on mobile */
+    text-align: center;
+  }
+
+  .entry6-body {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.2rem;
+  }
+
+  .line-left,
+  .line-right {
+    font-size: 1rem;
+  }
+}

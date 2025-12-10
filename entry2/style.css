@@ -130,11 +130,10 @@ h1{
 
 /* Scene 2 overrides */
 .scene-2 .line {
-  text-align: right;   /* override the left from .line */
-  white-space: normal; 
-    text-align: right !important;
+  text-align: right;
+  white-space: nowrap;      /* every line = one physical line */
   width: fit-content;
-  margin-left: auto;/* allow normal wrapping */
+  margin-left: auto;
 }
 
 /* keep last line on one line */

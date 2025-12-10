@@ -120,7 +120,7 @@ font-style: normal; font-size: 58px;
 
 .box1 {
    font-size: 24px;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Sans Mono", monospace; 
   background: transparent;
   color: rgb(247, 250, 255);
  width: 300px;

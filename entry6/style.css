@@ -121,13 +121,13 @@ body {
  font-family: "Noto Sans Mono", monospace;
   font-weight: 100;
   margin-top: 3rem;
+  font-size: 28px;
   width: 85%;              /* was 50% — wider = more distance */
   margin-left: auto;       /* center the block */
   margin-right: auto;      /* center the block */
-
   display: flex;
   flex-direction: column;
-  gap: 2.1rem;
+  gap: 1.9rem;
 }
 
 

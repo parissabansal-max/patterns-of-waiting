@@ -124,14 +124,17 @@ h1{
   width: 40vw;             /* width of the paragraph column */
   margin-left: auto;       /* push the whole block to the right */
   margin-right: 8vw;       /* distance from the right edge */
-  text-align: right;       /* align all lines to the right */
+  text-align: right !important;      /* align all lines to the right */
   display: block;          /* no flex needed */
 }
 
 /* Scene 2 overrides */
 .scene-2 .line {
   text-align: right;   /* override the left from .line */
-  white-space: normal; /* allow normal wrapping */
+  white-space: normal; 
+    text-align: right !important;
+  width: fit-content;
+  margin-left: auto;/* allow normal wrapping */
 }
 
 /* keep last line on one line */

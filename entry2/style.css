@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;300;400&display=swap');
+body, p, span, h1, h2, .line, .poem, .poem p, .prompt, .scroll-hint, .title, .full-title {
+  font-family: "Noto Sans Mono", monospace !important;
+  font-weight: 100 !important;
+}
+
 *{padding-left: 12px;padding-right: 30px;}
 p{padding-left: 12px;text-align: justify;line-height: 150%;font-size: 19px;}
 h1{text-align: center;padding-top: 6px;padding: bottom 10px;;}

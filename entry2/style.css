@@ -144,7 +144,7 @@ h2{font-size: 30px;}
 h2 {
   font-family: "Noto Sans Mono", monospace; 
   font-optical-sizing: auto;
-  font-weight: <light>;
+  font-weight: 100;
   font-style:normal;
 }
 p1 {text-align: center;}
@@ -178,7 +178,7 @@ background: rgba(0, 0, 0, 0.45); /* soft dark overlay to calm the photo */
   color: rgba(255, 255, 255, 0.85);
   font-family: "Noto Sans Mono", monospace; 
   font-size: 72px;             
-  font-weight: 400;             
+    font-weight: 100;             
   letter-spacing: 4px;  
   letter-spacing: 3px;
   margin-top: 300px;

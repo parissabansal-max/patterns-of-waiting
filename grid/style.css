@@ -51,6 +51,8 @@ body {
   font-size: 1.2rem;      /* <- now you can increase size safely */
   letter-spacing: 0.25em;
   white-space: nowrap;
+    font-family: "Noto Sans Mono", monospace;
+  font-weight: 100;
 }
 
 /* rotates around its own center, but stays in the same spot */

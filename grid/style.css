@@ -48,7 +48,7 @@ body {
 
 .clock-hand span {
   color: rgba(245, 245, 245, 0.85);
-  font-size: 1.2rem;      /* <- now you can increase size safely */
+  font-size: 1.0rem;      /* <- now you can increase size safely */
   letter-spacing: 0.25em;
   white-space: nowrap;
     font-family: "Noto Sans Mono", monospace;

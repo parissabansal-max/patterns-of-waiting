@@ -121,7 +121,7 @@ h1{
 
 .scene-2 {
   min-height: 70vh;        /* same vertical feel as Scene 1 */
-  width: 40vw;             /* width of the paragraph column */
+  width: 60vw;             /* width of the paragraph column */
   margin-left: auto;       /* push the whole block to the right */
   margin-right: 8vw;       /* distance from the right edge */
   text-align: right !important;      /* align all lines to the right */

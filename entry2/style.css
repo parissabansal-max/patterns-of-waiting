@@ -71,7 +71,7 @@ h1{
   opacity: 0;
   animation: fadeInContent 2s ease-in forwards;
   animation-delay: 40s; /* keep your long intro timing */
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Sans Mono", monospace; 
   z-index: 1; /* above the dark overlay */
 }
 
@@ -142,7 +142,7 @@ h1{
 h2{font-size: 30px;}
 
 h2 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Sans Mono", monospace; 
   font-optical-sizing: auto;
   font-weight: <light>;
   font-style:normal;
@@ -161,7 +161,7 @@ body {
     color: #ffffff;
     margin: 0;
     overflow-x: hidden;
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Noto Sans Mono", monospace; 
  background: url("./sky.png") center center / cover no-repeat fixed;
 }
 body::before {
@@ -176,7 +176,7 @@ background: rgba(0, 0, 0, 0.45); /* soft dark overlay to calm the photo */
   position: relative;
   text-align: center;
   color: rgba(255, 255, 255, 0.85);
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Sans Mono", monospace; 
   font-size: 72px;             
   font-weight: 400;             
   letter-spacing: 4px;  

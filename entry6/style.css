@@ -118,7 +118,8 @@ body {
   transform: translateY(18px);
   animation: bodyFadeUp 0.9s ease-out forwards;
   animation-delay: 8s;  /* after all heading lines appear */
-
+ font-family: "Noto Sans Mono", monospace;
+  font-weight: 100;
   margin-top: 3rem;
   width: 85%;              /* was 50% — wider = more distance */
   margin-left: auto;       /* center the block */

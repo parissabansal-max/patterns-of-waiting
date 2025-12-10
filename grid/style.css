@@ -8,7 +8,6 @@
     position: fixed;
     top: 60px;
     left: 90px;
-
     font-family: "Noto Sans Mono", monospace;
     font-weight: 100;
     font-size: clamp(2rem, 2.5vw, 2.8rem);
@@ -43,6 +42,8 @@ body {
   transform: translate(-50%, -50%);
   pointer-events: none;
   animation: spinInPlace 40s linear infinite;
+    font-family: "Noto Sans Mono", monospace;
+  font-weight: 100;
 }
 
 .clock-hand span {

@@ -72,6 +72,7 @@ h1{
   animation: fadeInContent 2s ease-in forwards;
   animation-delay: 40s; /* keep your long intro timing */
   font-family: "Noto Sans Mono", monospace; 
+   font-weight: 100;
   z-index: 1; /* above the dark overlay */
 }
 
@@ -264,6 +265,7 @@ background: rgba(0, 0, 0, 0.45); /* soft dark overlay to calm the photo */
 }
 /* place the scroll hint above scene 1 */
 .scroll-hint {
+   font-family: "Noto Sans Mono", monospace; 
   text-align: center;
   margin-top: 22vh;
   margin-bottom: 10vh;
@@ -275,6 +277,7 @@ background: rgba(0, 0, 0, 0.45); /* soft dark overlay to calm the photo */
   animation: scrollHint 1.2s ease-out forwards, pulse 3s ease-in-out infinite alternate;
   animation-delay: 10s; 
   cursor: default;
+   font-weight: 100;
 }
 
 @keyframes scrollHint {

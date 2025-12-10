@@ -82,8 +82,8 @@ body {
 
 /* MAIN WORD (PENDING) WITH HEARTBEAT) */
 .result-main {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 300;
+  font-family: "Noto Sans Mono", monospace;
+  font-weight: 100;
   font-size: 40px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -163,7 +163,8 @@ body {
   max-width: 640px;
   width: 80%;
   text-align: left;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Sans Mono", monospace;
+  font-weight: 100;
   font-size: 24px;
   line-height: 1.6;
   opacity: 0;
